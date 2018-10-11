@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    <h1>Hello, world!</h1>
+
+</div>
+
+<p>{% block test %}
+    {% endblock %}</p>
+
+<p>{% block about %}
+    {% endblock %}</p>
+
+<p>{% block index %}
+    {% endblock %}</p>
+
+<h1><em>Movie List</em></h1>
+
+{% if latest_choice %}
+
+<ul>
+    {% for MovieChoice in latest_choice %}
+    <li><h3>{{ MovieChoice.name }}</h3></li>
+    <li><h2>{{ MovieChoice.yearReleased }}</h2></li>
+    <li>{{ MovieChoice.ageAllowed }}</li>
+    <li>{{ MovieChoice.genre }}</li>
+    <hr/>
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>No choices are available.</p>
+{% endif %}
