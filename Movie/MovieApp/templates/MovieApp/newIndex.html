@@ -1,0 +1,21 @@
+{% extends 'MovieApp/base.html' %}
+{% block new %}
+<h1><em> new Movie List</em></h1>
+
+{% if latest_choice %}
+
+<ul>
+    {% for MovieChoice in latest_choice %}
+    <li><h3><em>{{ MovieChoice.name }}</em></h3></li>
+    <li><h2>{{ MovieChoice.yearReleased }}</h2></li>
+    <li>{{ MovieChoice.ageAllowed }}</li>
+    <li>{{ MovieChoice.genre }}</li>
+    <hr/>
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>No choices are available.</p>
+{% endif %}
+
+{% endblock %}
