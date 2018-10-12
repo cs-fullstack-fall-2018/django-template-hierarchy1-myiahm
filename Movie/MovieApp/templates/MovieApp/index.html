@@ -2,3 +2,21 @@
 {% block index %}
 <h1>this is a index </h1>
 {% endblock %}
+
+<h1><em>Movie List</em></h1>
+
+{% if latest_choice %}
+
+<ul>
+    {% for MovieChoice in latest_choice %}
+    <li><h3>{{ MovieChoice.name }}</h3></li>
+    <li><h2>{{ MovieChoice.yearReleased }}</h2></li>
+    <li>{{ MovieChoice.ageAllowed }}</li>
+    <li>{{ MovieChoice.genre }}</li>
+    <hr/>
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>No choices are available.</p>
+{% endif %}
